@@ -7,13 +7,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     nvix.url = "github:picharsiu/nvix";
+    apple-silicon.url = "github:nix-community/nixos-apple-silicon";
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
+          apple-silicon.nixosModules.default
           ./configuration.nix
 	        ./fonts.nix
           home-manager.nixosModules.home-manager

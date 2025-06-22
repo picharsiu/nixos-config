@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, system, ... }:
+{ config, lib, pkgs, inputs, system, apple-silicon, ... }:
 
 let
   widevine-firefox = import ./pkgs/widevine-firefox/package.nix { inherit (pkgs) lib stdenv callPackage;};
@@ -12,7 +12,6 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # Include the necessary packages and configuration for Apple Silicon support.
-      <apple-silicon-support/apple-silicon-support>
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -26,7 +25,7 @@ in
   hardware.asahi = {
     enable = true;
     setupAsahiSound = true;
-    peripheralFirmwareDirectory = ./firmware;
+    # peripheralFirmwareDirectory = ./firmware;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "overlay";
   };
