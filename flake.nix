@@ -17,7 +17,7 @@
         modules = [
           apple-silicon.nixosModules.default
           ./configuration.nix
-	        ./fonts.nix
+          ./fonts.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
