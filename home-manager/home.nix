@@ -31,7 +31,6 @@
 
   home.sessionVariables = {
     QT_IM_MODULE = "fcitx";
-    # XMODIFIERS = "@im=fcitx";
   };
 
   # This value determines the Home Manager release that your

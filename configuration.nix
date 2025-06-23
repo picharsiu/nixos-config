@@ -125,7 +125,6 @@ in
   environment.variables = {
     EDITOR = "vim";
     QT_IM_MODULE="fcitx";
-    # XMODIFIERS="@im=fcitx";
   };
 
   environment.sessionVariables.MOZ_GMP_PATH = [ "${widevine-firefox}/gmp-widevinecdm/system-installed" ];
