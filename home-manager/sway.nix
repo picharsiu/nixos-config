@@ -223,12 +223,23 @@ output * bg /home/picharsiu/Pictures/wallpapers/clairo-better-sg-lewis-134940822
     bindsym --locked XF86AudioRaiseVolume exec amixer set Master 5%+
     # bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 1+
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 1%+
+    bindsym --locked Shift+XF86MonBrightnessDown exec brightnessctl set 1-
+    bindsym --locked Shift+XF86MonBrightnessUp exec brightnessctl set 1+
     bindsym --locked $mod+XF86MonBrightnessDown exec brightnessctl -d kbd_backlight set 1%-
     bindsym --locked $mod+XF86MonBrightnessUp exec brightnessctl -d kbd_backlight set 1%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Special key to take a screenshot with grim ( Mod1 = Alt )
+    bindsym Mod1+Shift+3 exec grim -t png - | wl-copy -t image/png
+    bindsym Mod1+Shift+4 exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+    bindsym Mod1+Shift+1 exec grim
+    bindsym Mod1+Shift+2 exec grim -g "$(slurp)"
+
+    bindsym XF86Fn exec fcitx5-remote -t
+
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioNext exec playerctl next
 
 #
 # Status Bar:
@@ -262,7 +273,7 @@ exec ${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
 exec "mpv --no-video /home/picharsiu/Music/1-second-of-silence.mp3"
 # exec clash-verge
 exec "fcitx5 -d -r"
-exec "fcit5-remote -r"
+exec "fcitx5-remote -r"
 
 for_window [app_id="tuifloat"] {
   floating enable

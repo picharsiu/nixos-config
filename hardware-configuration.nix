@@ -8,25 +8,25 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "usb_storage" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "usb_storage" "uas" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/bbfc3268-b6ca-4468-83af-f5ada1f54f91";
+    { device = "/dev/disk/by-uuid/e4d3cb00-3a02-4bdd-9584-80f3941ff079";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/bbfc3268-b6ca-4468-83af-f5ada1f54f91";
+    { device = "/dev/disk/by-uuid/e4d3cb00-3a02-4bdd-9584-80f3941ff079";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/bbfc3268-b6ca-4468-83af-f5ada1f54f91";
+    { device = "/dev/disk/by-uuid/e4d3cb00-3a02-4bdd-9584-80f3941ff079";
       fsType = "btrfs";
       options = [ "subvol=@nix" "noatime" "compress=zstd" ];
     };

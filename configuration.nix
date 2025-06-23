@@ -25,7 +25,7 @@ in
   hardware.asahi = {
     enable = true;
     setupAsahiSound = true;
-    # peripheralFirmwareDirectory = ./firmware;
+    # peripheralFirmwareDirectory = /boot/asahi;
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "overlay";
   };
@@ -74,8 +74,8 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  # services.xserver.enable = true;
+  # services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -122,7 +122,11 @@ in
     inputs.nvix.packages.${pkgs.system}.core
   ];
 
-  environment.variables = { EDITOR = "vim"; };
+  environment.variables = {
+    EDITOR = "vim";
+    QT_IM_MODULE="fcitx";
+    # XMODIFIERS="@im=fcitx";
+  };
 
   environment.sessionVariables.MOZ_GMP_PATH = [ "${widevine-firefox}/gmp-widevinecdm/system-installed" ];
 
