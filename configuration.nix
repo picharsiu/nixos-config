@@ -5,13 +5,13 @@
 { config, lib, pkgs, inputs, system, apple-silicon, ... }:
 
 let
-  widevine-firefox = import ./pkgs/widevine-firefox/package.nix { inherit (pkgs) lib stdenv callPackage;};
+  widevine-firefox = import ./pkgs/widevine-firefox/package.nix { inherit (pkgs) lib stdenv callPackage; };
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Include the necessary packages and configuration for Apple Silicon support.
+      ./keyboard.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -74,8 +74,8 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  # services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

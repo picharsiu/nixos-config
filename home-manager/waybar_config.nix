@@ -19,39 +19,44 @@ home.file.".config/waybar/config".text = ''
   // Choose the order of the modules
   "modules-left": [
     "sway/workspaces",
-    "wlr/taskbar",
+    // "wlr/taskbar",
     "sway/mode",
-    "sway/window"
+    "sway/window",
+    "mpris"
   ],
-  // "modules-center": ["mpris"],
+  "modules-center": ["custom/notch"],
   "modules-right": [
     "tray",
     "cpu",
     "memory",
+    "disk",
     "backlight",
     "pulseaudio",
     "network",
     "battery",
     "clock"
   ],
-  // "modules-right": ["cpu", "memory", "battery", "network", "tray"],
   // Modules configuration
-  // "sway/workspaces": {
-  //     "disable-scroll": true,
-  //     "all-outputs": true,
-  //     "warp-on-scroll": false,
-  //     "format": "{name}: {icon}",
-  //     "format-icons": {
-  //         "1": "",
-  //         "2": "",
-  //         "3": "",
-  //         "4": "",
-  //         "5": "",
-  //         "urgent": "",
-  //         "focused": "",
-  //         "default": ""
-  //     }
-  // },
+  "sway/workspaces": {
+    "format": "{name} {windows}",
+    // "format-window-separator": " | ",
+    "window-rewrite-default": "",
+    "window-format": "{name}",
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "class<wechat>": "",
+      "class<firefox>": "",
+      "class<firefox> title<.*github.*>": "",
+      "class<firefox> title<.*apple music.*>": "",
+      "class<firefox> title<.*spotify.*>": "",
+      /* "kitty": "<span size='larger' rise='-700'></span>", */
+      "kitty": "",
+	  }
+  },
+  "custom/notch": {
+    "format": "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+    "tooltip": false
+  },
   "sway/window": {
     "format": "{}",
     "max-length": 60,
@@ -144,6 +149,12 @@ home.file.".config/waybar/config".text = ''
   "memory": {
     "format": "{}% <span size='smaller' rise='800'></span>"
   },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_free}% ",
+    "tooltip-format": "{used} used out of {total} ({percentage_used}%)",
+    "path": "/"
+  },
   "temperature": {
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -160,6 +171,7 @@ home.file.".config/waybar/config".text = ''
     // "device": "acpi_video1",
     // "format": "{percent}% {icon}",
     "format": "<span rise='700'>{percent}% <span size='120%' rise='-300'>{icon}</span></span>",
+    // "format": "<span rise='-2000'><span rise='700'>{percent}%</span> <span size='120%' rise='0'>{icon}</span></span>",
     "format-icons": [
       "",
       "",
@@ -226,6 +238,8 @@ home.file.".config/waybar/config".text = ''
       "default": [
         "",
         "",
+        "",
+        "",
         ""
       ]
     },
@@ -234,15 +248,18 @@ home.file.".config/waybar/config".text = ''
     "on-scroll-down": "amixer set Master 1%+"
   },
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} {dynamic}",
+    "format": "|   {player_icon}  {dynamic}",
+    "format-paused": "|   {status_icon}  {dynamic}",
+    "dynamic-order": ["title", "artist", "album"],
+    // "interval": "1",
+    "max-length": 200,
     // "dynamic-separator": "                           ",
     "player-icons": {
-      "default": "▶",
-      "mpv": "🎵"
+      // "default": "▶",
+      "default": ""
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": ""
     }
     // "ignored-players": ["firefox"]
   }

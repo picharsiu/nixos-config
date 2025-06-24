@@ -7,7 +7,6 @@
   imports = [
     ./yazi.nix
     ./sway.nix
-    # ./foot.nix
     ./firefox.nix
     ./fish.nix
     ./fuzzel.nix
@@ -27,10 +26,22 @@
     mpv
     bluetuith
     wechat
+    # compsize
   ];
 
   home.sessionVariables = {
     QT_IM_MODULE = "fcitx";
+  };
+
+  home.file = {
+    ".local/share/audio/1-second-of-silence.mp3".source = pkgs.fetchurl {
+      url = "https://github.com/anars/blank-audio/raw/92f06aaa1f1f4cae365af4a256b04cf9014de564/1-second-of-silence.mp3";
+      sha256 = "0pa4fyskmzzkhjdg9s1zlmk6c5z3105lf03fi6k8sbh5zjcyy099";
+    };
+    ".local/share/icc/Color LCD-37D8832A-2D66-02CA-B9F7-8F30A301B230.icc".source = pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/bebd9b352721b53738f2f60e17dd501238df5a5c/icc/Color%20LCD-37D8832A-2D66-02CA-B9F7-8F30A301B230.icc";
+      sha256 = "gF/rH0dD+70cMUQj8YikPqMyWTRNeDA8nMiZaUm/+Hc=";
+    };
   };
 
   # This value determines the Home Manager release that your

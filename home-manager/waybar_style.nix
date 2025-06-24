@@ -2,8 +2,8 @@
 home.file.".config/waybar/style.css".text = ''
 
 * {
-    font-family:  Cantarell, 'Font Awesome 6 Free';
-    font-size: 13px;
+    font-family:  Cantarell, 'Font Awesome 6 Brands', 'Font Awesome 6 Free';
+    font-size: 13.5px;
     font-weight: bold;
 }
 
@@ -15,7 +15,7 @@ window#waybar {
 }
 
 .modules-left:first-child {
-    margin-left: 0px;
+    margin-left: 8px;
 }
 
 .modules-right:last-child {
@@ -64,7 +64,7 @@ button:hover {
 /* } */
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 6px;
     background: rgba(0, 0, 0, 0.0);
     /* background-color: transparent; */
     color: #ffffff;
@@ -75,9 +75,9 @@ button:hover {
 }
 
 #workspaces button.focused {
-    /* background-color: #64727D; */
-    background: rgba(0, 0, 0, 0.0);
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #64727D;
+    /* background: rgba(0, 0, 0, 0.0); */
+    /* box-shadow: inset 0 -3px #ffffff; */
     /* border-radius: 8px 8px 8px 8px; */
 }
 
@@ -120,11 +120,19 @@ button:hover {
     border-radius: 4px;
 }
 
-#window,
-#workspaces {
+#window {
     margin: 0 4px;
     border-radius: 8px 8px 8px 8px;
-    padding: 0px 6px;
+    padding: 0px 2px;
+    color: #ffffff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#workspaces {
+    margin: 0 2px;
+    border-radius: 8px 8px 8px 8px;
+    padding: 0px 2px;
     color: #ffffff;
     margin-top: 4px;
     margin-bottom: 4px;
