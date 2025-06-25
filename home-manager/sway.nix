@@ -83,6 +83,8 @@ output * bg /home/picharsiu/Pictures/wallpapers/wallpaper fill
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    bindsym $mod+r exec wmenu-run -b -f "Ubuntu 17"
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

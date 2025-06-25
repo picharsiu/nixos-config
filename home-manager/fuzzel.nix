@@ -1,7 +1,7 @@
 {
 home.file.".config/fuzzel/fuzzel.ini".text = ''
 
-font=Alata:weight=regular:size=15
+font=Futura:weight=regular:size=14
 # line-height=20
 fields=filename,name,generic,keywords
 layer=overlay

@@ -26,7 +26,8 @@
     mpv
     bluetuith
     wechat
-    # compsize
+    btop
+    wmenu
   ];
 
   home.sessionVariables = {
