@@ -47,7 +47,7 @@ home.file.".config/waybar/config".text = ''
       "class<wechat>": "",
       "class<firefox>": "",
       "class<firefox> title<.*github.*>": "",
-      "class<firefox> title<.*apple music.*>": "",
+      "class<firefox> title<.*apple.*music.*>": "",
       "class<firefox> title<.*spotify.*>": "",
       /* "kitty": "<span size='larger' rise='-700'></span>", */
       "kitty": "",
