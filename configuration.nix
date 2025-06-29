@@ -27,7 +27,6 @@ in
     setupAsahiSound = true;
     # peripheralFirmwareDirectory = /boot/asahi;
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
   };
 
   networking.hostName = "nixos"; # Define your hostname.
