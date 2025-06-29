@@ -283,6 +283,11 @@ for_window [app_id="tuifloat"] {
   resize set width 50 ppt
   resize set height 60 ppt
 }
+for_window [app_id="tuibtop"] {
+  floating enable
+  resize set width 70 ppt
+  resize set height 70 ppt
+}
 for_window [class="wechat"] floating enable
 
   '';

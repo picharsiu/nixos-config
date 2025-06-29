@@ -147,13 +147,15 @@ home.file.".config/waybar/config".text = ''
     "tooltip": false,
   },
   "memory": {
-    "format": "{}% <span size='smaller' rise='800'></span>"
+    "format": "{}% <span size='smaller' rise='800'></span>",
+    "on-click": "kitty --class tuibtop btop",
   },
   "disk": {
     "interval": 30,
     "format": "{percentage_free}% ",
     "tooltip-format": "{used} used out of {total} ({percentage_used}%)",
-    "path": "/"
+    "path": "/",
+    "on-click": "kitty --hold --class tuifloat sh -c 'sudo nix-collect-garbage -d && nix-collect-garbage -d && sudo nix store optimise'",
   },
   "temperature": {
     // "thermal-zone": 2,
