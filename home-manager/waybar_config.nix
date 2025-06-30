@@ -49,6 +49,7 @@ home.file.".config/waybar/config".text = ''
       "class<firefox> title<.*github.*>": "",
       "class<firefox> title<.*apple.*music.*>": "",
       "class<firefox> title<.*spotify.*>": "",
+      "org.gnome.Nautilus": "",
       /* "kitty": "<span size='larger' rise='-700'></span>", */
       "kitty": "",
 	  }

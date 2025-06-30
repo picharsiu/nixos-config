@@ -118,12 +118,14 @@ in
     git
     widevine-firefox
     wl-clipboard-rs
+    clipse
     inputs.nvix.packages.${pkgs.system}.core
   ];
 
   environment.variables = {
     EDITOR = "vim";
     QT_IM_MODULE="fcitx";
+    XMODIFIERS="@im=fcitx";
   };
 
   environment.sessionVariables.MOZ_GMP_PATH = [ "${widevine-firefox}/gmp-widevinecdm/system-installed" ];
@@ -142,7 +144,7 @@ in
       brightnessctl
       alsa-utils
       fuzzel
-      mate.mate-polkit
+      polkit_gnome
       dconf
       swaybg
       swayidle
@@ -152,6 +154,8 @@ in
       mako # notification system developed by swaywm maintainer
     ];
   };
+
+  services.gvfs.enable = true;
 
   services.greetd = {
     enable = true;

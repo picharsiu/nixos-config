@@ -271,12 +271,19 @@ bar {
 
 include /etc/sway/config.d/*
 
-exec ${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
+exec "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 exec "mpv --no-video /home/picharsiu/.local/share/audio/1-second-of-silence.mp3"
-# exec clash-verge
 exec "fcitx5 -d -r"
 exec "fcitx5-remote -r"
 exec "autotiling-rs"
+
+exec "clipse --listen-shell"
+for_window [app_id="clipse"] {
+  floating enable
+  resize set width 50 ppt
+  resize set height 77 ppt
+}
+bindsym $mod+Shift+v exec kitty --class clipse -e clipse
 
 for_window [app_id="tuifloat"] {
   floating enable
