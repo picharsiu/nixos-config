@@ -161,7 +161,7 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --remember-session --time --cmd sway";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --cmd sway";
         user = "greeter";
       };
       initial_session = {
