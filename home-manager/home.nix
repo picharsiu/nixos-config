@@ -32,6 +32,7 @@
     nautilus
     tauon
     swayimg
+    asahi-bless
   ];
 
   home.sessionVariables = {
