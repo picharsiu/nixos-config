@@ -38,7 +38,7 @@ home.file.".config/waybar/config".text = ''
   ],
   // Modules configuration
   "sway/workspaces": {
-    "format": "{name} {windows}",
+    "format": " {name} {windows}",
     // "format-window-separator": " | ",
     "window-rewrite-default": "",
     "window-format": "{name}",

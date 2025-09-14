@@ -26,7 +26,7 @@ in
     enable = true;
     setupAsahiSound = true;
     # peripheralFirmwareDirectory = /boot/asahi;
-    useExperimentalGPUDriver = true;
+    # useExperimentalGPUDriver = true;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -123,7 +123,7 @@ in
   ];
 
   environment.variables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     QT_IM_MODULE="fcitx";
     XMODIFIERS="@im=fcitx";
   };

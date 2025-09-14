@@ -6,7 +6,7 @@ font=Futura:weight=regular:size=14
 fields=filename,name,generic,keywords
 layer=overlay
 vertical-pad=12
-width=15
+width=22
 
 [colors]
 background=1e1e2edd
@@ -22,8 +22,8 @@ counter=7f849cff
 border=0089A7ff
 
 [border]
-width=7
-radius=30
+width=4
+radius=15
 
 '';
 }

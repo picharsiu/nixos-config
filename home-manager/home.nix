@@ -33,6 +33,7 @@
     tauon
     swayimg
     asahi-bless
+    #niri
   ];
 
   home.sessionVariables = {

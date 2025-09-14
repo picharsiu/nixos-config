@@ -2,7 +2,7 @@
 home.file.".config/waybar/style.css".text = ''
 
 * {
-    font-family:  Cantarell, 'Font Awesome 6 Brands', 'Font Awesome 6 Free';
+    font-family:  Cantarell, 'Font Awesome 7 Brands', 'Font Awesome 7 Free';
     font-size: 13.5px;
     font-weight: bold;
 }
