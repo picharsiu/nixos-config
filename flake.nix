@@ -8,6 +8,7 @@
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     nvix.url = "github:picharsiu/nvix/backup";
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
+    firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
   };
 
   outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, ... }@inputs: {
@@ -23,7 +24,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.picharsiu = ./home-manager/home.nix;
-
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }

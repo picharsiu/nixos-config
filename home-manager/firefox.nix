@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 # Add Firefox GNOME theme directory
-home.file."firefox-gnome-theme" = {
-      target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
-      source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
-};
+# home.file."firefox-gnome-theme" = {
+#       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
+#       source = (fetchTarball "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz");
+# };
+
+home.file.".mozilla/firefox/nix-user-profile/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
 
 programs.firefox = {
       enable = true;

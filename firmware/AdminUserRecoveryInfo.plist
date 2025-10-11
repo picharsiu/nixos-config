@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>_mbsetupuser</key>
+	<dict>
+		<key>AuthenticationAuthority</key>
+		<array>
+			<string>;ShadowHash;HASHLIST:&lt;SALTED-SHA512-PBKDF2,SRP-RFC5054-4096-SHA512-PBKDF2&gt;</string>
+			<string>;Kerberosv5;;_mbsetupuser@LKDC:SHA1.408FD6B161C4ADF593F446E4885C94BDE81FEB05;LKDC:SHA1.408FD6B161C4ADF593F446E4885C94BDE81FEB05;</string>
+		</array>
+		<key>GeneratedUID</key>
+		<string>FFFFEEEE-DDDD-CCCC-BBBB-AAAA000000F8</string>
+		<key>RealName</key>
+		<string>Setup User</string>
+	</dict>
+	<key>picharsiu</key>
+	<dict>
+		<key>AuthenticationAuthority</key>
+		<array>
+			<string>;ShadowHash;HASHLIST:&lt;SALTED-SHA512-PBKDF2,SRP-RFC5054-4096-SHA512-PBKDF2&gt;</string>
+			<string>;SecureToken;</string>
+			<string>;Kerberosv5;;picharsiu@LKDC:SHA1.408FD6B161C4ADF593F446E4885C94BDE81FEB05;LKDC:SHA1.408FD6B161C4ADF593F446E4885C94BDE81FEB05;</string>
+		</array>
+		<key>GeneratedUID</key>
+		<string>EDE60632-9ADA-44CC-8BAF-F4243A20AE2A</string>
+		<key>RealName</key>
+		<string>picharsiu</string>
+	</dict>
+</dict>
+</plist>
