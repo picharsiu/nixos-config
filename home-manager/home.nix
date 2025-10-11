@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, system, firefox-gnome-theme, ... }:
+{ config, pkgs, inputs, system, ... }:
 
 {
   home.username = "picharsiu";
