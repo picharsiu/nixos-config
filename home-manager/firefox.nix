@@ -2,7 +2,7 @@
 
 {
 # Add Firefox GNOME theme directory
-home.file.".mozilla/firefox/nix-user-profile/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
+home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
 
 programs.firefox = {
       enable = true;
