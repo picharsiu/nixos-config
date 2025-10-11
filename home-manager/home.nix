@@ -33,7 +33,8 @@
     tauon
     swayimg
     asahi-bless
-    #niri
+    niri
+    xwayland-satellite
   ];
 
   home.sessionVariables = {

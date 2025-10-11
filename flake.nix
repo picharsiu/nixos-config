@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    nvix.url = "github:picharsiu/nvix";
+    nvix.url = "github:picharsiu/nvix/backup";
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
   };
 
