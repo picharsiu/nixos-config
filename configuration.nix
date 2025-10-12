@@ -119,6 +119,7 @@ in
     widevine-firefox
     wl-clipboard-rs
     clipse
+    killall
     inputs.nvix.packages.${pkgs.system}.core
   ];
 
@@ -148,7 +149,7 @@ in
       dconf
       swaybg
       swayidle
-      swaylock
+      swaylock-effects
       grim # screenshot functionality
       slurp # screenshot functionality
       mako # notification system developed by swaywm maintainer
@@ -176,6 +177,12 @@ in
         user = "picharsiu";
       };
     };
+  };
+
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+    HandleLidSwitch= "suspend";
+    KillUserProcesses = false;
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -47,14 +47,19 @@ output * bg /home/picharsiu/Pictures/wallpapers/wallpaper fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+exec swayidle \
+         timeout 300 'swaymsg "output * power off"' \
+         resume 'swaymsg "output * power on"' \
+         &
+
+# exec swayidle timeout 600 'systemctl suspend' &
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+bindsym $mod+Control+l exec swaylock -f --clock --indicator --screenshots --effect-blur 10x10 --fade-in 1
+bindsym XF86PowerOff exec bash -c 'sleep 0.2; kill -USR1 $(pgrep -f "swayidle.*output")'
 
 ### Input configuration
 #
