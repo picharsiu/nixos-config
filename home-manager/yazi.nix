@@ -7,7 +7,7 @@ programs.yazi = {
   shellWrapperName = "y";
 
   settings = {
-    manager = {
+    mgr = {
       show_hidden = true;
     };
     preview = {
@@ -19,7 +19,7 @@ programs.yazi = {
   plugins = {
     mount = pkgs.yaziPlugins.mount;
   };
-  
+
   # initLua = ''
     # require("full-border"):setup()
   # '';

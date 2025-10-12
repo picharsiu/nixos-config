@@ -168,7 +168,7 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --cmd sway";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --user-menu --window-padding 2 --cmd sway --sessions ${pkgs.niri}/share/wayland-sessions";
         user = "greeter";
       };
       initial_session = {
