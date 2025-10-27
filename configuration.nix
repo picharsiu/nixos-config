@@ -137,7 +137,6 @@ in
 
   security.polkit.enable = true;
 
-  # # enable Sway window manager
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
