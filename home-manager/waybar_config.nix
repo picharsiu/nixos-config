@@ -221,7 +221,7 @@ home.file.".config/waybar/config".text = ''
     "format-linked": "",
     "format-disconnected": "⚠",
     // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "on-click": "kitty --class tuifloat sudo nmtui"
+    "on-click": "kitty --class tuifloat nmtui"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float

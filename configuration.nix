@@ -64,7 +64,7 @@ in
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
       fcitx5-gtk
-      fcitx5-chinese-addons
+      qt6Packages.fcitx5-chinese-addons
       fcitx5-fluent
     ];
   };
@@ -121,6 +121,8 @@ in
     clipse
     killall
     inputs.nvix.packages.${pkgs.system}.core
+    inputs.noctalia.packages.${pkgs.system}.default
+    daed
   ];
 
   environment.variables = {
@@ -162,7 +164,25 @@ in
     flake = "/home/picharsiu/nixos-config"; # sets NH_OS_FLAKE variable for you
   };
 
+  #services.v2raya.enable = true;
+  systemd.services.daed = {
+    after = [ "network-online.target" "docker.service" "systemd-sysctl.service" ];
+    wants = [ "network-online.target" ];
+    conflicts = [ "dae.service" ];
+    serviceConfig = {
+      Type = "simple";
+      User = "root";
+      LimitNPROC = 512;
+      LimitNOFILE = 1048576;
+      ExecStart = "${pkgs.daed}/bin/daed run -c /etc/daed/";
+      Restart = "on-abnormal";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
   services.gvfs.enable = true;
+
+  services.upower.enable = true;
 
   services.greetd = {
     enable = true;
@@ -196,7 +216,7 @@ in
   services.openssh.enable = true;
   services.udisks2.enable = true;
   services.playerctld.enable = true;
-  services.v2raya.enable = true;
+  # services.v2raya.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -232,7 +252,7 @@ in
   };
 
   boot.loader.timeout = 0;
-  boot.kernelParams = [ "apple_dcp.show_notch=1" ];
+  boot.kernelParams = [ "appledrm.show_notch=1" ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

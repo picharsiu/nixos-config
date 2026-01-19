@@ -35,6 +35,7 @@
     asahi-bless
     niri
     xwayland-satellite
+    libnotify
   ];
 
   home.sessionVariables = {

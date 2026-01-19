@@ -4,12 +4,12 @@
 fonts = {
   # enableDefaultPackages = true;
   packages = with pkgs; [
-    ubuntu_font_family
+    ubuntu-classic
     liberation_ttf
     noto-fonts
     sarasa-gothic
     noto-fonts-cjk-serif
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     cantarell-fonts
     font-awesome
     font-awesome_5
