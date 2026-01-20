@@ -120,8 +120,8 @@ in
     wl-clipboard-rs
     clipse
     killall
-    inputs.nvix.packages.${pkgs.system}.core
-    inputs.noctalia.packages.${pkgs.system}.default
+    inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.core
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     daed
   ];
 

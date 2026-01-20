@@ -17,10 +17,10 @@ fonts = {
     nerd-fonts.meslo-lg
     maple-mono.NF-CN-unhinted
     nerd-fonts.jetbrains-mono
-    inputs.apple-fonts.packages.${pkg.system}.sf-pro
-    inputs.apple-fonts.packages.${pkg.system}.sf-compact
-    inputs.apple-fonts.packages.${pkg.system}.sf-mono
-    inputs.apple-fonts.packages.${pkg.system}.ny
+    inputs.apple-fonts.packages.${pkg.stdenv.hostPlatform.system}.sf-pro
+    inputs.apple-fonts.packages.${pkg.stdenv.hostPlatform.system}.sf-compact
+    inputs.apple-fonts.packages.${pkg.stdenv.hostPlatform.system}.sf-mono
+    inputs.apple-fonts.packages.${pkg.stdenv.hostPlatform.system}.ny
   ];
 
   fontconfig = {

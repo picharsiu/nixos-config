@@ -88,7 +88,7 @@ bindsym XF86PowerOff exec bash -c 'sleep 0.2; kill -USR1 $(pgrep -f "swayidle.*o
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    bindsym $mod+r exec wmenu-run -b -f "Ubuntu 17"
+    #bindsym $mod+r exec wmenu-run -b -f "Ubuntu 17"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
