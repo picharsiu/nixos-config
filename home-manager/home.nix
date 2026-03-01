@@ -36,6 +36,7 @@
     niri
     xwayland-satellite
     libnotify
+    art
   ];
 
   home.sessionVariables = {
