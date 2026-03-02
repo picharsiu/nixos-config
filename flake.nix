@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.quickshell.follows = "quickshell";  # Use same quickshell version
     };
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, ... }@inputs: {

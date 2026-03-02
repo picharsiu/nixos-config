@@ -123,6 +123,8 @@ in
     inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.core
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     daed
+    inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.default
+
   ];
 
   environment.variables = {
@@ -188,11 +190,12 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --user-menu --window-padding 2 --cmd sway --sessions ${pkgs.niri}/share/wayland-sessions";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --user-menu --window-padding 2 --sessions ${pkgs.niri}/share/wayland-sessions:${pkgs.sway}/share/wayland-sessions:${inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.mango}/share/wayland-sessions";
         user = "greeter";
       };
       initial_session = {
-        command = "${pkgs.sway}/bin/sway";
+        # command = "${pkgs.sway}/bin/sway";
+        command = "${inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.mango}/bin/mango";
         user = "picharsiu";
       };
     };

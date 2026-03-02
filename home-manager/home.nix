@@ -37,6 +37,8 @@
     xwayland-satellite
     libnotify
     art
+    dms-shell
+    quickshell
   ];
 
   home.sessionVariables = {
