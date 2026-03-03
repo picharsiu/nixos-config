@@ -6,13 +6,12 @@
 
   imports = [
     ./yazi.nix
-    ./sway.nix
+    ./sway/sway.nix
     ./firefox.nix
     ./fish.nix
     ./fuzzel.nix
     ./kitty.nix
-    ./waybar_config.nix
-    ./waybar_style.nix
+    ./mango/mango.nix
   ];
 
   # 通过 home.packages 安装一些常用的软件
@@ -37,8 +36,6 @@
     xwayland-satellite
     libnotify
     art
-    dms-shell
-    quickshell
   ];
 
   home.sessionVariables = {

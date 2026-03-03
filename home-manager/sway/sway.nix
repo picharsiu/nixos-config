@@ -6,6 +6,11 @@
   #   wrapperFeatures.gtk = true;
   # };
 
+  imports = [
+    ./waybar_config.nix
+    ./waybar_style.nix
+  ];
+
   services.gnome-keyring.enable = true;
 
   home.pointerCursor = {
@@ -270,12 +275,13 @@ font Cantarell bold 11
 default_border pixel 4
 smart_borders on
 
-bar {
-     swaybar_command "${pkgs.waybar}/bin/waybar"
-}
+# bar {
+#      swaybar_command "${pkgs.waybar}/bin/waybar -c /home/picharsiu/.config/sway/waybar/config -s /home/picharsiu/.config/sway/waybar/style.css"
+# }
 
 include /etc/sway/config.d/*
 
+exec "waybar -c /home/picharsiu/.config/sway/waybar/config -s /home/picharsiu/.config/sway/waybar/style.css"
 exec "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
 exec "mpv --no-video /home/picharsiu/.local/share/audio/1-second-of-silence.mp3"
 exec "fcitx5 -d -r"
@@ -288,7 +294,7 @@ for_window [app_id="clipse"] {
   resize set width 50 ppt
   resize set height 77 ppt
 }
-bindsym $mod+Shift+v exec kitty --class clipse -e clipse
+bindsym $mod+Shift+v exec kitty --class clipse setsid clipse
 
 for_window [app_id="tuifloat"] {
   floating enable

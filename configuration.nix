@@ -124,7 +124,6 @@ in
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     daed
     inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.default
-
   ];
 
   environment.variables = {
@@ -273,7 +272,7 @@ in
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
   #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+  # For more information, see `man configuration.nix` or https://nixo/morgs.anual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }

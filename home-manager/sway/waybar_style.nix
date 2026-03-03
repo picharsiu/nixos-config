@@ -1,5 +1,5 @@
 {
-home.file.".config/waybar/style.css".text = ''
+home.file.".config/sway/waybar/style.css".text = ''
 
 * {
     font-family:  Cantarell, 'Font Awesome 7 Brands', 'Font Awesome 7 Free';

@@ -1,6 +1,6 @@
 {
 
-home.file.".config/waybar/config".text = ''
+home.file.".config/sway/waybar/config".text = ''
 
 {
   "layer": "top", // Waybar at top layer
