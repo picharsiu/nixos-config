@@ -15,6 +15,8 @@
 
 # More option see https://github.com/DreamMaoMao/mango/wiki/
 
+env = DISPLAY,:2
+exec = xwayland-satellite :2
 monitorrule=name:eDP-1,scale:2
 
 exec-once=waybar -c /home/picharsiu/.config/mango/waybar/config -s /home/picharsiu/.config/mango/waybar/style.css
@@ -32,6 +34,10 @@ windowrule=isfloating:1,width:680,height:600,appid:clipse
 windowrule=isfloating:1,width:800,height:700,appid:tuifloat
 windowrule=isfloating:1,width:1000,height:800,appid:tuibtop
 windowrule=isfloating:1,width:1100,height:700,appid:swayimg
+
+exec-once=swayidle timeout 300 'mmsg -d disable_monitor,eDP-1' resume 'mmsg -d enable_monitor,eDP-1' &
+bind=SUPER+CTRL,l,spawn,swaylock -f --clock --indicator --screenshots --effect-blur 10x10 --fade-in 1
+bind=NONE,XF86PowerOff,spawn_shell,bash -c 'sleep 0.2; kill -USR1 $(pgrep -f "swayidle")'
 
 bind=Alt+Shift,3,spawn_shell,grim -t png - | wl-copy -t image/png
 bind=Alt+Shift,4,spawn_shell,grim -g "$(slurp)" -t png - | wl-copy -t image/png

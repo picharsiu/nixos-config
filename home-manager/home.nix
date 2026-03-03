@@ -36,6 +36,8 @@
     xwayland-satellite
     libnotify
     art
+    localsend
+    chromium
   ];
 
   home.sessionVariables = {
