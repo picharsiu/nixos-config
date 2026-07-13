@@ -25,7 +25,8 @@ in
   hardware.asahi = {
     enable = true;
     setupAsahiSound = true;
-    peripheralFirmwareDirectory = ./firmware;
+    # peripheralFirmwareDirectory = ./firmware;
+    # peripheralFirmwareDirectory = /boot/vendorfw;
     # useExperimentalGPUDriver = true;
   };
 
@@ -122,7 +123,7 @@ in
     killall
     inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.core
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    daed
+    #daed
     inputs.mango.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -166,20 +167,20 @@ in
   };
 
   #services.v2raya.enable = true;
-  systemd.services.daed = {
-    after = [ "network-online.target" "docker.service" "systemd-sysctl.service" ];
-    wants = [ "network-online.target" ];
-    conflicts = [ "dae.service" ];
-    serviceConfig = {
-      Type = "simple";
-      User = "root";
-      LimitNPROC = 512;
-      LimitNOFILE = 1048576;
-      ExecStart = "${pkgs.daed}/bin/daed run -c /etc/daed/";
-      Restart = "on-abnormal";
-    };
-    wantedBy = [ "multi-user.target" ];
-  };
+  #systemd.services.daed = {
+  #  after = [ "network-online.target" "docker.service" "systemd-sysctl.service" ];
+  #  wants = [ "network-online.target" ];
+  #  conflicts = [ "dae.service" ];
+  #  serviceConfig = {
+  #    Type = "simple";
+  #    User = "root";
+  #    LimitNPROC = 512;
+  #    LimitNOFILE = 1048576;
+  #    ExecStart = "${pkgs.daed}/bin/daed run -c /etc/daed/";
+  #    Restart = "on-abnormal";
+  #  };
+  #  wantedBy = [ "multi-user.target" ];
+  #};
 
   services.gvfs.enable = true;
 
@@ -240,16 +241,18 @@ in
     substituters = [
       # cache mirror located in China
       # status: https://mirror.sjtu.edu.cn/
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      # "https://mirror.sjtu.edu.cn/nix-channels/store"
       # status: https://mirrors.ustc.edu.cn/status/
       # "https://mirrors.ustc.edu.cn/nix-channels/store"
 
       "https://cache.nixos.org"
+      "https://nixos-apple-silicon.cachix.org"
     ];
 
     trusted-public-keys = [
       # the default public key of cache.nixos.org, it's built-in, no need to add it here
       # "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "nixos-apple-silicon.cachix.org-1:8psDu5SA5dAD7qA0zMy5UT292TxeEPzIz8VVEr2Js20="
     ];
   };
 
@@ -272,7 +275,7 @@ in
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
   #
-  # For more information, see `man configuration.nix` or https://nixo/morgs.anual/nixos/stable/options#opt-system.stateVersion .
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }

@@ -37,7 +37,6 @@
     libnotify
     art
     localsend
-    chromium
   ];
 
   home.sessionVariables = {
