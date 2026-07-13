@@ -1,11 +1,12 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 {
 # Add Firefox GNOME theme directory
-home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
+home.file."${config.xdg.configHome}/mozilla/firefox/default/chrome/firefox-gnome-theme".source = inputs.firefox-gnome-theme;
 
 programs.firefox = {
       enable = true;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
       profiles.default = {
          name = "Default";
          settings = {

@@ -20,7 +20,7 @@ home.file.".config/mango/waybar/config".text = ''
   "modules-left": [
     "ext/workspaces",
     "wlr/taskbar",
-    "dwl/window",
+    "mango/window",
     "mpris"
   ],
   "modules-center": ["custom/notch"],
@@ -43,7 +43,7 @@ home.file.".config/mango/waybar/config".text = ''
     "on-click-right": "deactivate",
     "sort-by-id": true
   },
-  "dwl/window": {
+  "mango/window": {
     "format": "{title}",
     "rewrite": {
       "(.*) — Mozilla Firefox": "$1",
