@@ -22,9 +22,10 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waybar.url = "github:Alexays/Waybar";
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, waybar, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
@@ -39,6 +40,13 @@
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };
+          }
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                waybar = waybar.packages.${prev.system}.waybar;
+              })
+            ];
           }
         ];
         specialArgs = {
