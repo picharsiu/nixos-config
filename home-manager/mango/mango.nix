@@ -117,7 +117,7 @@ scroller_default_proportion_single=1.0
 scroller_proportion_preset=0.5,0.8,1.0
 
 # Master-Stack Layout Setting
-new_is_master=1
+new_is_master=0
 default_mfact=0.55
 default_nmaster=1
 smartgaps=1
@@ -248,7 +248,8 @@ gesturebind=none,down,4,toggleoverview
 bind=ALT,e,set_proportion,1.0
 bind=ALT,x,switch_proportion_preset,
 
-# switch layout
+# Cycle through layouts
+circle_layout=tile,scroller,dwindle
 bind=SUPER,n,switch_layout
 
 # tag switch
