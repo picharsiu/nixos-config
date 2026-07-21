@@ -21,7 +21,7 @@ monitorrule=name:eDP-1,scale:2
 
 exec-once=waybar -c /home/picharsiu/.config/mango/waybar/config -s /home/picharsiu/.config/mango/waybar/style.css
 exec-once=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
-exec-once=mpv --no-video /home/picharsiu/.local/share/audio/1-second-of-silence.mp3
+#exec-once=mpv --no-video /home/picharsiu/.local/share/audio/1-second-of-silence.mp3
 exec-once=swaybg -i /home/picharsiu/Pictures/wallpapers/wallpaper
 exec=fcitx5 -d -r
 exec=fcitx5-remote -r

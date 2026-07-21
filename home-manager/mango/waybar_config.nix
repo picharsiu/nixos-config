@@ -18,7 +18,8 @@ home.file.".config/mango/waybar/config".text = ''
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "ext/workspaces",
+    "mango/workspaces",
+    // "mango/layout",
     "wlr/taskbar",
     "mango/window",
     "mpris"
@@ -36,12 +37,17 @@ home.file.".config/mango/waybar/config".text = ''
     "clock"
   ],
   // Modules configuration
-  "ext/workspaces": {
+  "mango/workspaces": {
     "format": "{icon}",
-    "ignore-hidden": true,
+    "hide-empty": true,
     "on-click": "activate",
     "on-click-right": "deactivate",
-    "sort-by-id": true
+    "overview-label": "OVERVIEW"
+  },
+  "mango/layout": {
+      "format": "{}",
+      // "format-S": "Scroller",
+      // "format-T": "Tile",
   },
   "mango/window": {
     "format": "{title}",
