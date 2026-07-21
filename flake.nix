@@ -44,7 +44,7 @@
           {
             nixpkgs.overlays = [
               (final: prev: {
-                waybar = waybar.packages.${prev.system}.waybar;
+                waybar = waybar.packages.${prev.stdenv.hostPlatform.system}.waybar;
               })
             ];
           }
