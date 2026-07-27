@@ -12,6 +12,7 @@
     ./fuzzel.nix
     ./kitty.nix
     ./mango/mango.nix
+    ./niri/niri.nix
   ];
 
   # 通过 home.packages 安装一些常用的软件
