@@ -14,6 +14,21 @@ let
       url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Futura.ttc";
       hash = "sha256-xZwE6Oh/dS4uV7Pz1Dp5PrqQep4q/8v+rIXnxneeh48=";
     }} $out/share/fonts/truetype/Futura.ttc
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/SorkinType/Alata/raw/3b051d2a6181deba154717cfd6be409effe32ffa/fonts/ttf/Alata-Regular.ttf";
+      hash = "sha256-e3FDKl4uJAmjWDVTvFznAyCai86bLxNsolesTC063cQ=";
+    }} $out/share/fonts/truetype/Alata-Regular.ttf
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Hiragino%20Sans%20GB.ttc";
+      hash = "sha256-7KHSahvEk0kPWiRQ/RuTHkoYIsw3KIEQFjrm6ZONQTA=";
+    }} "$out/share/fonts/truetype/Hiragino Sans GB.ttc"
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Times.ttc";
+      hash = "sha256-IOPciZEvSzfywprddkhVFk76+0xmyjJVHZ61LHQRx8c=";
+    }} $out/share/fonts/truetype/Times.ttc
   '';
 
 in
@@ -46,12 +61,14 @@ fonts = {
     enable = true;
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
-      serif = [  "Liberation Serif" "Noto Serif CJK HK" ];
-      sansSerif = [ "Ubuntu" "Sarasa UI HC" ];
+      # serif = [  "Liberation Serif" "Noto Serif CJK HK" ];
+      # sansSerif = [ "Ubuntu" "Sarasa UI HC" ];
       monospace = [ "Ubuntu Mono Nerd Font" ];
       # serif = [  "Times" "Noto Serif CJK HK" ];
       # sansSerif = [ "SF Pro" "PingFang SC" ];
       # monospace = [ "JetBrainsMono Nerd Font" ];
+      serif = [  "Liberation Serif" "Shanggu Serif ST VF" ];
+      sansSerif = [ "Ubuntu" "Shanggu Sans ST VF" ];
     };
   };
 };

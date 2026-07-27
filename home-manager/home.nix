@@ -67,18 +67,6 @@
       url = "https://github.com/picharsiu/resources/raw/bebd9b352721b53738f2f60e17dd501238df5a5c/icc/Color%20LCD-37D8832A-2D66-02CA-B9F7-8F30A301B230.icc";
       sha256 = "gF/rH0dD+70cMUQj8YikPqMyWTRNeDA8nMiZaUm/+Hc=";
     };
-    ".local/share/fonts/Alata-Regular.ttf".source = pkgs.fetchurl {
-      url = "https://github.com/SorkinType/Alata/raw/3b051d2a6181deba154717cfd6be409effe32ffa/fonts/ttf/Alata-Regular.ttf";
-      sha256 = "e3FDKl4uJAmjWDVTvFznAyCai86bLxNsolesTC063cQ=";
-    };
-    ".local/share/fonts/Hiragino Sans GB.ttc".source = pkgs.fetchurl {
-      url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Hiragino%20Sans%20GB.ttc";
-      sha256 = "7KHSahvEk0kPWiRQ/RuTHkoYIsw3KIEQFjrm6ZONQTA=";
-    };
-    ".local/share/fonts/Times.ttc".source = pkgs.fetchurl {
-      url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Times.ttc";
-      sha256 = "IOPciZEvSzfywprddkhVFk76+0xmyjJVHZ61LHQRx8c=";
-    };
   };
 
   # This value determines the Home Manager release that your
