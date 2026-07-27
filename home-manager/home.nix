@@ -44,6 +44,19 @@
     XMODIFIERS="@im=fcitx";
   };
 
+  home.pointerCursor = {
+    enable = true;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    x11 = {
+      enable = true;
+      defaultCursor = "Adwaita";
+    };
+  };
+
+  services.gnome-keyring.enable = true;
+
   home.file = {
     ".local/share/audio/1-second-of-silence.mp3".source = pkgs.fetchurl {
       url = "https://github.com/anars/blank-audio/raw/92f06aaa1f1f4cae365af4a256b04cf9014de564/1-second-of-silence.mp3";
@@ -57,18 +70,10 @@
       url = "https://github.com/SorkinType/Alata/raw/3b051d2a6181deba154717cfd6be409effe32ffa/fonts/ttf/Alata-Regular.ttf";
       sha256 = "e3FDKl4uJAmjWDVTvFznAyCai86bLxNsolesTC063cQ=";
     };
-    # ".local/share/fonts/Futura.ttc".source = pkgs.fetchurl {
-    #   url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Futura.ttc";
-    #   sha256 = "xZwE6Oh/dS4uV7Pz1Dp5PrqQep4q/8v+rIXnxneeh48=";
-    # };
     ".local/share/fonts/Hiragino Sans GB.ttc".source = pkgs.fetchurl {
       url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Hiragino%20Sans%20GB.ttc";
       sha256 = "7KHSahvEk0kPWiRQ/RuTHkoYIsw3KIEQFjrm6ZONQTA=";
     };
-    # ".local/share/fonts/PingFang.ttc".source = pkgs.fetchurl {
-    #   url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/PingFang.ttc";
-    #   sha256 = "gyC24au46C2hMQmukddIVP2ACjIPYvi1wDiko2NdrNw=";
-    # };
     ".local/share/fonts/Times.ttc".source = pkgs.fetchurl {
       url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Times.ttc";
       sha256 = "IOPciZEvSzfywprddkhVFk76+0xmyjJVHZ61LHQRx8c=";

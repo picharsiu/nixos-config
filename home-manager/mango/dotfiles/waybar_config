@@ -1,8 +1,4 @@
 {
-
-home.file.".config/sway/waybar/config".text = ''
-
-{
   "layer": "top", // Waybar at top layer
   // "mode": "overlay",
   // "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -18,10 +14,10 @@ home.file.".config/sway/waybar/config".text = ''
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "sway/workspaces",
-    // "wlr/taskbar",
-    "sway/mode",
-    "sway/window",
+    "mango/workspaces",
+    // "mango/layout",
+    "wlr/taskbar",
+    "mango/window",
     "mpris"
   ],
   "modules-center": ["custom/notch"],
@@ -37,6 +33,26 @@ home.file.".config/sway/waybar/config".text = ''
     "clock"
   ],
   // Modules configuration
+  "mango/workspaces": {
+    "format": "{icon}",
+    "hide-empty": true,
+    "on-click": "activate",
+    "on-click-right": "deactivate",
+    "overview-label": "OVERVIEW"
+  },
+  "mango/layout": {
+      "format": "{}",
+      // "format-S": "Scroller",
+      // "format-T": "Tile",
+  },
+  "mango/window": {
+    "format": "{title}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1",
+      "(.*) - zsh": "> [$1]"
+    }
+    // "format": "[{layout}] {title}"
+  },
   "sway/workspaces": {
     "format": " {name} {windows}",
     // "format-window-separator": " | ",
@@ -266,7 +282,4 @@ home.file.".config/sway/waybar/config".text = ''
     }
     // "ignored-players": ["firefox"]
   }
-}
-
-  '';
 }
