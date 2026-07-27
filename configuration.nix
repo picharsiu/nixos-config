@@ -42,7 +42,7 @@ in
   networking.networkmanager.wifi.backend = "iwd";
 
   # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
+  time.timeZone = "Europe/Berlin";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://192.168.31.251:7890/";
