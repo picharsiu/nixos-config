@@ -30,7 +30,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          apple-silicon.nixosModules.default
+          apple-silicon.nixosModules.apple-silicon-support
           ./configuration.nix
           ./fonts.nix
           home-manager.nixosModules.home-manager {
