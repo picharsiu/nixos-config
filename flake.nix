@@ -22,17 +22,22 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    steam-asahi = {
+      url = "github:sm-idk/steam-asahi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     waybar.url = "github:Alexays/Waybar";
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-fonts, nvix, apple-silicon, waybar, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
-          apple-silicon.nixosModules.apple-silicon-support
+          inputs.apple-silicon.nixosModules.apple-silicon-support
           ./configuration.nix
           ./fonts.nix
+          inputs.steam-asahi.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -44,7 +49,7 @@
           {
             nixpkgs.overlays = [
               (final: prev: {
-                waybar = waybar.packages.${prev.stdenv.hostPlatform.system}.waybar;
+                waybar = inputs.waybar.packages.${prev.stdenv.hostPlatform.system}.waybar;
               })
             ];
           }

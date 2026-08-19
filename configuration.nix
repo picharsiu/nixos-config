@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, system, apple-silicon, ... }:
+{ config, lib, pkgs, inputs, system, ... }:
 
 let
   widevine-firefox = import ./pkgs/widevine-firefox/package.nix { inherit (pkgs) lib stdenv callPackage; };
@@ -103,7 +103,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.picharsiu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "kvm" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
       tree
@@ -164,6 +164,11 @@ in
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/picharsiu/nixos-config"; # sets NH_OS_FLAKE variable for you
+  };
+
+  programs.steam-asahi = {
+    enable = true;
+    #memoryMiB = 6144; # Optional
   };
 
   #services.v2raya.enable = true;
