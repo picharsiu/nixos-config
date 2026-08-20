@@ -29,6 +29,26 @@ let
       url = "https://github.com/picharsiu/resources/raw/19c8fe0149b6c60a492f257afc801c6a9a6aa976/fonts/Times.ttc";
       hash = "sha256-IOPciZEvSzfywprddkhVFk76+0xmyjJVHZ61LHQRx8c=";
     }} $out/share/fonts/truetype/Times.ttc
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/445960b108f32ccb93803ee8f37ef28413e0662f/fonts/ShangguSansSC-VF.otf";
+      hash = "sha256-W1is5D8VaS47nxa6g+YA/HRIHlIdDhrAW3/bSrYdoPo=";
+    }} $out/share/fonts/opentype/ShangguSansSC-VF.otf
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/445960b108f32ccb93803ee8f37ef28413e0662f/fonts/ShangguSansST-VF.otf";
+      hash = "sha256-CODuf/eKlpCCoU93l1hhqY87iAe0I6kVfbSF8EaUdC0=";
+    }} $out/share/fonts/opentype/ShangguSansST-VF.otf
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/445960b108f32ccb93803ee8f37ef28413e0662f/fonts/ShangguSerifSC-VF.otf";
+      hash = "sha256-WPJwMN//NAWiGT769rr+dT5MCm9ZoYrzch46jJVhzew=";
+    }} $out/share/fonts/opentype/ShangguSerifSC-VF.otf
+
+    cp ${pkgs.fetchurl {
+      url = "https://github.com/picharsiu/resources/raw/445960b108f32ccb93803ee8f37ef28413e0662f/fonts/ShangguSerifST-VF.otf";
+      hash = "sha256-c6JPHjj+8ppiaDyq6XfmwVT3YozAxdKdNFGtWZNYoOE=";
+    }} $out/share/fonts/opentype/ShangguSerifST-VF.otf
   '';
 
 in
