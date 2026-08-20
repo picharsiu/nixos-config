@@ -122,7 +122,7 @@ in
     clipse
     killall
     inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.core
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    noctalia
     #daed
     mango
   ];

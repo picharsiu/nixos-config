@@ -13,15 +13,6 @@
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.quickshell.follows = "quickshell";  # Use same quickshell version
-    };
-    #mango = {
-    #  url = "github:mangowm/mango";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     waybar.url = "github:Alexays/Waybar/456f78ecb1cf16e5397a29691e69fc2906843387";
   };
 
