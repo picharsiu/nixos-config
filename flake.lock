@@ -569,26 +569,6 @@
         "type": "github"
       }
     },
-    "quickshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1786864924,
-        "narHash": "sha256-9nqIJWuSlAwy4Vs98N9ffoVeU2dmsWcAJ7/DyIDihqM=",
-        "owner": "outfoxxed",
-        "repo": "quickshell",
-        "rev": "532a0606cafb05851a203e65be22c9a057447ee2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "outfoxxed",
-        "repo": "quickshell",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "apple-fonts": "apple-fonts",
@@ -597,7 +577,6 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_3",
         "nvix": "nvix",
-        "quickshell": "quickshell",
         "waybar": "waybar"
       }
     },
