@@ -22,10 +22,6 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    steam-asahi = {
-      url = "github:sm-idk/steam-asahi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     waybar.url = "github:Alexays/Waybar";
   };
 
@@ -37,7 +33,6 @@
           inputs.apple-silicon.nixosModules.apple-silicon-support
           ./configuration.nix
           ./fonts.nix
-          inputs.steam-asahi.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
