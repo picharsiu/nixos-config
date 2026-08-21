@@ -119,7 +119,8 @@ in
     git
     widevine-firefox
     wl-clipboard
-    clipse
+    wl-clip-persist
+    cliphist
     killall
     inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.core
     noctalia
