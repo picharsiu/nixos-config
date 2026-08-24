@@ -9,7 +9,9 @@
     nvix.url = "github:picharsiu/nvix/backup";
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
     firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
-    waybar.url = "github:Alexays/Waybar/456f78ecb1cf16e5397a29691e69fc2906843387";
+    #waybar.url = "github:Alexays/Waybar/456f78ecb1cf16e5397a29691e69fc2906843387";
+    waybar.url = "github:Alexays/Waybar";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -18,6 +20,7 @@
         system = "aarch64-linux";
         modules = [
           inputs.apple-silicon.nixosModules.apple-silicon-support
+          inputs.nix-flatpak.nixosModules.nix-flatpak
           ./configuration.nix
           ./fonts.nix
           home-manager.nixosModules.home-manager {

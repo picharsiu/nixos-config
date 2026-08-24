@@ -37,7 +37,6 @@
     xwayland-satellite
     libnotify
     art
-    localsend
   ];
 
   home.sessionVariables = {

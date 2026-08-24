@@ -88,12 +88,12 @@ in
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-    # enable = true;
-    # wireplumber.enable = true;
-    # alsa.enable = true;
-    # pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    wireplumber.enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -221,6 +221,19 @@ in
   services.udisks2.enable = true;
   services.playerctld.enable = true;
   # services.v2raya.enable = true;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+  services.flatpak = {
+    enable = true;
+    update.onActivation = false;
+    packages = [
+      "org.localsend.localsend_app"
+      "it.mijorus.gearlever"
+    ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
