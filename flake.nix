@@ -9,7 +9,6 @@
     nvix.url = "github:picharsiu/nvix/backup";
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
     firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
-    #waybar.url = "github:Alexays/Waybar/456f78ecb1cf16e5397a29691e69fc2906843387";
     waybar.url = "github:Alexays/Waybar";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
