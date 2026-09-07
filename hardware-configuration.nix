@@ -14,40 +14,30 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/45214b70-6421-49d8-bb5d-a695bebbe5e3";
+    { device = "/dev/disk/by-uuid/a9564740-9cf7-49b8-8996-f993f5a7aa7b";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/45214b70-6421-49d8-bb5d-a695bebbe5e3";
+    { device = "/dev/disk/by-uuid/a9564740-9cf7-49b8-8996-f993f5a7aa7b";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/45214b70-6421-49d8-bb5d-a695bebbe5e3";
+    { device = "/dev/disk/by-uuid/a9564740-9cf7-49b8-8996-f993f5a7aa7b";
       fsType = "btrfs";
       options = [ "subvol=@nix" "noatime" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A73D-1CE9";
+    { device = "/dev/disk/by-uuid/E68A-1CEB";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ {
-      device = "/var/lib/swapfile";
-      size = 16*1024;
-    } ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
+  swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }
