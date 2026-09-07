@@ -22,9 +22,11 @@
   hardware.asahi = {
     enable = true;
     setupAsahiSound = true;
-    # peripheralFirmwareDirectory = ./firmware;
-    # peripheralFirmwareDirectory = /boot/vendorfw;
-    # useExperimentalGPUDriver = true;
+    peripheralFirmwareDirectory = (fetchTree {
+      type = "path";
+      path = "/boot/vendorfw/";
+      narHash = "sha256-/U52DPbxmdKTJ0CzB8VZfECwgA1R06xerz/TsdR6qk0=";
+    }).outPath;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
