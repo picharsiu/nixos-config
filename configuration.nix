@@ -4,6 +4,9 @@
 
 { config, lib, pkgs, inputs, system, ... }:
 
+let
+  widevine-firefox = import ./pkgs/widevine-firefox/package.nix { inherit (pkgs) lib stdenv callPackage; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -116,7 +119,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
-    widevine-cdm
+    widevine-firefox
     wl-clipboard
     wl-clip-persist
     cliphist
@@ -133,7 +136,7 @@
     XMODIFIERS="@im=fcitx";
   };
 
-  environment.sessionVariables.MOZ_GMP_PATH = [ "${pkgs.widevine-cdm}/gmp-widevinecdm/system-installed" ];
+  environment.sessionVariables.MOZ_GMP_PATH = [ "${widevine-firefox}/gmp-widevinecdm/system-installed" ];
 
   # Enable the gnome-keyring secrets vault.
   # Will be exposed through DBus to programs willing to store secrets.
