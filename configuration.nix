@@ -28,7 +28,7 @@ in
     peripheralFirmwareDirectory = (fetchTree {
       type = "path";
       path = "/boot/vendorfw/";
-      narHash = "sha256-/U52DPbxmdKTJ0CzB8VZfECwgA1R06xerz/TsdR6qk0=";
+      narHash = "sha256-IOJlb0XkbJbjsDW4cND831byYkYEusmsHbjENa/ttQw=";
     }).outPath;
   };
 

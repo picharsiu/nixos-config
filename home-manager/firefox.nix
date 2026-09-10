@@ -28,7 +28,7 @@ programs.firefox = {
 
             # Color Management
             "gfx.color_management.mode" = 1;
-            "gfx.color_management.display_profile" = "/home/picharsiu/.local/share/icc/Color LCD-37D8832A-2D66-02CA-B9F7-8F30A301B230.icc";
+            "gfx.color_management.display_profile" = "/home/picharsiu/.local/share/icc/Color_LCD-37D8832A-2D66-02CA-B9F7-8F30A301B230.icc";
          };
          userChrome = ''
             @import "firefox-gnome-theme/userChrome.css";
