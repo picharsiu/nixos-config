@@ -37,10 +37,21 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/a9564740-9cf7-49b8-8996-f993f5a7aa7b";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" "noatime" ];
+    };
   swapDevices = [ {
-      device = "/var/lib/swapfile";
+      device = "/swap/swapfile";
       size = 16*1024;
     } ];
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/a9564740-9cf7-49b8-8996-f993f5a7aa7b";
+      fsType = "btrfs";
+      options = [ "subvol=@log" "noatime" "compress=zstd" ];
+    };
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }
