@@ -128,6 +128,7 @@ in
     noctalia
     #daed
     mango
+    inputs.oniri.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   environment.variables = {
@@ -198,7 +199,8 @@ in
       };
       initial_session = {
         # command = "${pkgs.sway}/bin/sway";
-        command = "${pkgs.mango}/bin/mango";
+        # command = "${pkgs.mango}/bin/mango";
+        command = "${pkgs.niri}/bin/niri";
         user = "picharsiu";
       };
     };

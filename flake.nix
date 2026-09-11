@@ -11,6 +11,7 @@
     firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
     waybar.url = "github:Alexays/Waybar";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    oniri.url = "github:picharsiu/oniri";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
