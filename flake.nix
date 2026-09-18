@@ -9,7 +9,7 @@
     nvix.url = "github:picharsiu/nvix/backup";
     apple-silicon.url = "github:nix-community/nixos-apple-silicon";
     firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
-    waybar.url = "github:Alexays/Waybar";
+    # waybar.url = "github:Alexays/Waybar";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     oniri.url = "github:picharsiu/oniri";
   };
@@ -31,13 +31,13 @@
               inherit inputs;
             };
           }
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                waybar = inputs.waybar.packages.${prev.stdenv.hostPlatform.system}.waybar;
-              })
-            ];
-          }
+          #{
+          #  nixpkgs.overlays = [
+          #    (final: prev: {
+          #      waybar = inputs.waybar.packages.${prev.stdenv.hostPlatform.system}.waybar;
+          #    })
+          #  ];
+          #}
         ];
         specialArgs = {
           inherit inputs;
