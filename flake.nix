@@ -12,6 +12,7 @@
     # waybar.url = "github:Alexays/Waybar";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     oniri.url = "github:picharsiu/oniri";
+    steam-asahi.url = "github:sm-idk/steam-asahi";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -21,6 +22,13 @@
         modules = [
           inputs.apple-silicon.nixosModules.apple-silicon-support
           inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.steam-asahi.nixosModules.default {
+            programs.steam-asahi = {
+              enable = true;
+              # Optional: on 8 GiB machines this leaves the compositor headroom.
+              memoryMiB = 6144;
+            };
+          }
           ./configuration.nix
           ./fonts.nix
           home-manager.nixosModules.home-manager {

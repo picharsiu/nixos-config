@@ -12,6 +12,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./keyboard.nix
+      ./steam.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -105,7 +106,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.picharsiu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "kvm" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
       tree
