@@ -13,6 +13,7 @@ in
       ./hardware-configuration.nix
       ./keyboard.nix
       ./steam.nix
+      ./openlist.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -130,6 +131,7 @@ in
     #daed
     mango
     inputs.oniri.packages.${pkgs.stdenv.hostPlatform.system}.default
+    fetch
   ];
 
   environment.variables = {
@@ -266,12 +268,14 @@ in
 
       "https://cache.nixos.org"
       "https://nixos-apple-silicon.cachix.org"
+      "https://nix-community.cachix.org"
     ];
 
     trusted-public-keys = [
       # the default public key of cache.nixos.org, it's built-in, no need to add it here
       # "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "nixos-apple-silicon.cachix.org-1:8psDu5SA5dAD7qA0zMy5UT292TxeEPzIz8VVEr2Js20="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
 
