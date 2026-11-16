@@ -27,11 +27,6 @@ in
   hardware.asahi = {
     enable = true;
     setupAsahiSound = true;
-    peripheralFirmwareDirectory = (fetchTree {
-      type = "path";
-      path = "/boot/vendorfw/";
-      narHash = "sha256-IOJlb0XkbJbjsDW4cND831byYkYEusmsHbjENa/ttQw=";
-    }).outPath;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
